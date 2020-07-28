@@ -1,6 +1,18 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
+
+puts "destroying articles"
+Article.destroy_all
+
+puts "creating articles"
+
+10.times do
+  Article.create!(title: Faker::Quote.robin,
+                         content: Faker::Quote.matz)
+end 
+
+puts "articles created!"
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
